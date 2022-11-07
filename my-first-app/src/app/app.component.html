@@ -7,3 +7,16 @@
     <li>Upon clicking the button, the username should be reset to an empty String</li>
 </ol>
 
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="Username"
+>
+<p>{{Username}}</p>
+<button
+    class="btn btn-primary"
+    [disabled]="Username === ''"
+    (click)="Username = ''">Reset User</button>
+
+
+
