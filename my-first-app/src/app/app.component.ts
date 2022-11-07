@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-first-app';
+  log = [];
+  showSecret = false;
+
+  addArrays() {
+    this.showSecret = !this.showSecret;
+    // this.log.push(this.log.length + 1)
+    this.log.push(new Date())
+  }
 }

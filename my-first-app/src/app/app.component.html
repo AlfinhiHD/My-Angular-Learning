@@ -1,2 +1,29 @@
 <h1> Welcome! </h1>
 <p>Alfinhi Hajid Dhia</p>
+
+<div class="container">
+    <ul>
+        <li>Add a Button which says 'Display Details'</li>
+        <li>Add a Paragraph with any content of your choice (Secret Password = tuna)</li>
+        <li>Toggle the displaying of that paragraph with the button created in the first step</li>
+        <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incerementing number)</li>
+        <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
+    </ul>
+    <p>Answer :</p>
+    <!-- <button
+        type="button"
+        class= "btn btn-primary"
+        (click)="showSecret = !showSecret"
+    >Display Details</button> -->
+    <button
+        type="button"
+        class= "btn btn-primary"
+        (click)="addArrays()"
+    >Display Details</button>
+    <p *ngIf="showSecret">Secret Password : Tuna</p>
+    <div 
+    *ngFor="let num of log; let i = index"
+    [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+    [ngClass]="{whiteColor: i >= 4}"
+    >{{ num }}</div>
+</div>
